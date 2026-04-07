@@ -1,0 +1,26 @@
+/* Caveat - Hand Drawing Details */
+@font-face {
+  font-family: 'Caveat';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('../fonts/caveat.woff2') format('woff2');
+}
+
+/* Patrick Hand - Body Text */
+@font-face {
+  font-family: 'Patrick Hand';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/patrickhand.woff2') format('woff2');
+}
+
+/* Permanent Marker - Title/Logo */
+@font-face {
+  font-family: 'Permanent Marker';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/permanentmarker.woff2') format('woff2');
+}

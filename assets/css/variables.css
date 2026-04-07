@@ -1,0 +1,11 @@
+:root {
+  --ink:    #1a0a0a;
+  --red:    #d91a1a;
+  --red2:   #a80f0f;
+  --paper:  #f5f0e8;
+  --paper2: #ede8d8;
+  --pencil: #8c7b6b;
+  --ff-title: 'Permanent Marker', cursive;
+  --ff-hand:  'Caveat', cursive;
+  --ff-body:  'Patrick Hand', cursive;
+}
