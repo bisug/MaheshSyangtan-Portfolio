@@ -11,7 +11,7 @@
 @font-face {
   font-family: 'Patrick Hand';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 400 700; /* FIX: range covers bold — prevents synthetic bold rendering */
   font-display: swap;
   src: url('../fonts/patrickhand.woff2') format('woff2');
 }

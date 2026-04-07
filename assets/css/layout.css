@@ -39,6 +39,10 @@ nav a::after {
 }
 nav a:hover { color: var(--red); }
 nav a:hover::after { transform: scaleX(1) rotate(-0.5deg); }
+/* FIX: active state now controlled by CSS class toggled by JS (not inline style)
+   — avoids race condition where multiple sections firing simultaneously
+   would cause the last one to win unpredictably */
+nav a.nav-active { color: var(--red); }
 
 /* ── FOOTER ── */
 footer { border-top: 2px dashed rgba(26,10,10,0.18); padding: clamp(24px, 5vw, 40px) 0; text-align: center; }

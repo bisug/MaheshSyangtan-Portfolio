@@ -48,7 +48,8 @@
   opacity: 0; animation: fadeUp 0.7s 0.55s forwards;
 }
 .hero-role .typed-text { color: var(--red); font-weight: 700; }
-.hero-cursor { color: var(--red); }
+/* FIX: Cursor blink is now pure CSS — JS setInterval removed */
+.hero-cursor { color: var(--red); animation: blink 1s step-end infinite; }
 
 .hero-mission {
   max-width: 600px; font-size: clamp(1rem, 2vw, 1.25rem); color: var(--ink);
@@ -87,7 +88,8 @@
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .sticky:hover {
-  transform: translateY(-3px) rotate(0.3deg);
+  /* FIX: transform removed — JS (mousemove/mouseenter/mouseleave) now owns all
+     transform logic exclusively, preventing the snap-reset conflict on mouseleave */
   box-shadow: 5px 7px 0 rgba(26,10,10,0.13), 8px 12px 24px rgba(26,10,10,0.08);
 }
 .sticky.red  { background: #fff0f0; }
@@ -187,8 +189,16 @@
 .status-active   { background: #d4edda; color: #155724; border: 1.5px solid #28a745; }
 
 /* ── EDUCATION ── */
+/* FIX: .edu-card is now self-contained with its own border & shadow — no longer
+   needs to inherit styles from .sticky accidentally via dual class usage */
 .edu-card {
-  padding: clamp(24px, 4vw, 36px) clamp(28px, 5vw, 40px); background: var(--paper2); position: relative;
+  padding: clamp(24px, 4vw, 36px) clamp(28px, 5vw, 40px);
+  background: var(--paper2);
+  position: relative;
+  border: 1.5px solid rgba(26,10,10,0.14);
+  border-radius: 2px 10px 3px 9px / 9px 3px 10px 2px;
+  box-shadow: 3px 4px 0 rgba(26,10,10,0.11), 6px 8px 20px rgba(26,10,10,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 .edu-card .institution { font-family: var(--ff-title); font-size: clamp(1.3rem, 3vw, 1.7rem); color: var(--red); }
 .edu-card .program { font-family: var(--ff-hand); font-size: clamp(1rem, 2vw, 1.25rem); margin-top: 8px; font-weight: 700; }
